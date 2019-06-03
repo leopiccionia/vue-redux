@@ -28,7 +28,7 @@ yarn add @leopiccionia/vue-redux
 
 ### Plugin
 
-The package exposes a Vue plugin called `VueRedux`.
+The package exposes a Vue plugin called `VueRedux`. You'll need to pass the `store` to the app instance.
 
 ```javascript
 import Vue from 'vue'

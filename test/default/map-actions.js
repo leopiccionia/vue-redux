@@ -1,4 +1,4 @@
-import { createCounterStore, incrementCounter, mountWithStore } from '../utils'
+import { createCounterStore, incrementCounter, mountWithStore, setCounter } from '../utils'
 import { mapActions } from '../../dist/index'
 
 describe('mapActions', () => {
@@ -14,5 +14,18 @@ describe('mapActions', () => {
     wrapper.vm.incrementCounter()
     expect(incrementCounterSpy).toHaveBeenCalled()
     expect(wrapper.vm.$state).toBe(1)
+  })
+
+  it('Passes arguments to action dispatcher', () => {
+    const store = createCounterStore()
+    const setCounterSpy = jest.fn(setCounter)
+    const wrapper = mountWithStore(store, {
+      methods: mapActions({ setCounter: setCounterSpy }),
+      template: '<div></div>'
+    })
+    expect(wrapper.vm.$state).toBe(0)
+    wrapper.vm.setCounter(10)
+    expect(setCounterSpy).toHaveBeenCalledWith(10)
+    expect(wrapper.vm.$state).toBe(10)
   })
 })

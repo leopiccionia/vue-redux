@@ -8,5 +8,5 @@ module.exports = {
       statements: 100
     }
   },
-  testMatch: ['**/test/**.js', '**/test/!(test-utils)/**.js']
+  testMatch: ['**/test/**.js', '**/test/!(utils)/**.js']
 }

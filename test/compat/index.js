@@ -1,4 +1,4 @@
-import { createCounterStore, incrementCounter, mountWithStoreCompat } from '../test-utils'
+import { createCounterStore, incrementCounter, mountWithStoreCompat } from '../utils'
 
 describe('VueRedux - default build', () => {
   it('Exposes vm.$store', () => {

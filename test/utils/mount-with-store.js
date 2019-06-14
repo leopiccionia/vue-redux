@@ -2,9 +2,9 @@ import { createLocalVue, shallowMount } from '@vue/test-utils'
 import { VueRedux } from '../../dist/index'
 import { VueRedux as VueReduxCompat } from '../../dist/compat'
 
-export function mountWithStore (store, component) {
+function genericMountWithStore (plugin, store, component) {
   const localVue = createLocalVue()
-  localVue.use(VueRedux)
+  localVue.use(plugin)
   const wrapper = shallowMount(component, {
     localVue,
     store
@@ -12,12 +12,10 @@ export function mountWithStore (store, component) {
   return wrapper
 }
 
+export function mountWithStore (store, component) {
+  return genericMountWithStore(VueRedux, store, component)
+}
+
 export function mountWithStoreCompat (store, component) {
-  const localVue = createLocalVue()
-  localVue.use(VueReduxCompat)
-  const wrapper = shallowMount(component, {
-    localVue,
-    store
-  })
-  return wrapper
+  return genericMountWithStore(VueReduxCompat, store, component)
 }

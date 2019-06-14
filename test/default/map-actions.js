@@ -1,4 +1,4 @@
-import { createCounterStore, incrementCounter, mountWithStore } from '../test-utils'
+import { createCounterStore, incrementCounter, mountWithStore } from '../utils'
 import { mapActions } from '../../dist/index'
 
 describe('mapActions', () => {
@@ -6,9 +6,7 @@ describe('mapActions', () => {
     const store = createCounterStore()
     const incrementCounterSpy = jest.fn(incrementCounter)
     const wrapper = mountWithStore(store, {
-      methods: {
-        ...mapActions({ incrementCounter: incrementCounterSpy })
-      },
+      methods: mapActions({ incrementCounter: incrementCounterSpy }),
       template: '<div></div>'
     })
     expect(wrapper.vm.$state).toBe(0)

@@ -1,6 +1,6 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
-import { VueRedux } from '../../dist/index'
-import { VueRedux as VueReduxCompat } from '../../dist/compat'
+import { VueRedux } from '../../lib'
+import { VueRedux as VueReduxCompat } from '../../lib/compat'
 
 function genericMountWithStore (plugin, store, component) {
   const localVue = createLocalVue()

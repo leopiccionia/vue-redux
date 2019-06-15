@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@leopiccionia/vue-redux": "^0.1.0",
+    "@leopiccionia/vue-redux": "^0.1.1",
     "core-js": "^2.6.5",
     "cross-fetch": "^3.0.3",
     "redux": "^4.0.1",

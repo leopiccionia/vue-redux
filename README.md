@@ -174,4 +174,4 @@ export default {
 ## Roadmap
 
 * [ ] Add TypeScript types
-* [ ] Add unit tests
+* [x] Add unit tests

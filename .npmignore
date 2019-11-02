@@ -1,2 +1,4 @@
+coverage/*
 example/*
+node_modules/*
 tests/*

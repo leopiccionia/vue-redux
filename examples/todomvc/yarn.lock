@@ -710,10 +710,8 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@leopiccionia/vue-redux@^0.1.1":
+"@leopiccionia/vue-redux@file:../..":
   version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@leopiccionia/vue-redux/-/vue-redux-0.1.2.tgz#1e4b7b1f1b8c5be7e493bf3c899ad388032a04de"
-  integrity sha512-57KziWNd1v+T7bfrFcvvKASFaUD28SUN074ltEGSi0dv9s8vUjokqbYV3NQdzuq9JChzRDB4okhrZGPhKpwHkw==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.1.3 (2019-11-13)
+
+### Chore
+
+* Dependencies updates.
+* Improve `.npmignore`.
+
 ## 0.1.2 (2019-08-14)
 
 ### Chore

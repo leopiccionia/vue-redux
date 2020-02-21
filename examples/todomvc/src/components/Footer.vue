@@ -1,9 +1,9 @@
 <template>
   <p>
     Show:
-    <FilterLink :filter="$options.VisibilityFilters.SHOW_ALL">All</FilterLink>,
-    <FilterLink :filter="$options.VisibilityFilters.SHOW_ACTIVE">Active</FilterLink>,
-    <FilterLink :filter="$options.VisibilityFilters.SHOW_COMPLETED">Completed</FilterLink>
+    <FilterLink :filter="filters.SHOW_ALL">All</FilterLink>,
+    <FilterLink :filter="filters.SHOW_ACTIVE">Active</FilterLink>,
+    <FilterLink :filter="filters.SHOW_COMPLETED">Completed</FilterLink>
   </p>
 </template>
 
@@ -16,6 +16,10 @@
     components: {
       FilterLink
     },
-    VisibilityFilters
+    computed: {
+      filters () {
+        return VisibilityFilters
+      }
+    }
   }
 </script>

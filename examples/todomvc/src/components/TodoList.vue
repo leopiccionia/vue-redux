@@ -1,6 +1,8 @@
 <template>
   <ul>
-    <Todo v-for="(todo, index) in visibleTodos" :key="index" :completed="todo.completed" :text="todo.text" @click="toggleTodo(todo.text)"/>
+    <template v-for="(todo, index) in visibleTodos">
+      <Todo :key="index" :completed="todo.completed" :text="todo.text" @click="toggleTodo(todo.text)"/>
+    </template>
   </ul>
 </template>
 

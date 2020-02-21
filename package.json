@@ -17,19 +17,25 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@rollup/plugin-buble": "^0.21.1",
+    "@vue/test-utils": "^1.0.0-beta.31",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "jest": "^24.8.0",
-    "redux": "^4.0.1",
-    "rollup": "^1.12.4",
-    "rollup-plugin-buble": "^0.19.6",
-    "rollup-plugin-terser": "^5.0.0",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^25.1.0",
+    "redux": "^4.0.5",
+    "rollup": "^1.31.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   },
   "bugs": {
     "url": "https://github.com/leopiccionia/vue-redux/issues"

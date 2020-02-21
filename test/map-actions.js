@@ -11,7 +11,9 @@ describe('mapActions', () => {
     })
     expect(wrapper.vm.$state).toBe(0)
     expect(typeof wrapper.vm.incrementCounter).toBe('function')
+
     wrapper.vm.incrementCounter()
+
     expect(incrementCounterSpy).toHaveBeenCalled()
     expect(wrapper.vm.$state).toBe(1)
   })
@@ -24,7 +26,9 @@ describe('mapActions', () => {
       template: '<div></div>'
     })
     expect(wrapper.vm.$state).toBe(0)
+
     wrapper.vm.setCounter(10)
+
     expect(setCounterSpy).toHaveBeenCalledWith(10)
     expect(wrapper.vm.$state).toBe(10)
   })

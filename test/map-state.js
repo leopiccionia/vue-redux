@@ -2,7 +2,7 @@ import { createNestedStore, mountWithStore, setNested } from './utils'
 import { mapState } from '../lib'
 
 describe('mapState', () => {
-  it('Accepts function', () => {
+  it('Accepts function', async () => {
     const store = createNestedStore()
     const wrapper = mountWithStore(store, {
       computed: mapState({ fooBar: state => state.foo.bar }),
@@ -10,12 +10,15 @@ describe('mapState', () => {
     })
     expect(wrapper.vm.fooBar).toBe(0)
     expect(wrapper.html()).toBe('<div>0</div>')
+
     wrapper.vm.$store.dispatch(setNested(10))
+    await wrapper.vm.$nextTick()
+
     expect(wrapper.vm.fooBar).toBe(10)
     expect(wrapper.html()).toBe('<div>10</div>')
   })
 
-  it('Accepts paths object', () => {
+  it('Accepts paths object', async () => {
     const store = createNestedStore()
     const wrapper = mountWithStore(store, {
       computed: mapState({ foo: 'foo', fooBar: 'foo.bar' }),
@@ -24,13 +27,16 @@ describe('mapState', () => {
     expect(wrapper.vm.foo).toStrictEqual({ bar: 0 })
     expect(wrapper.vm.fooBar).toBe(0)
     expect(wrapper.html()).toBe('<div>0 / 0</div>')
+
     wrapper.vm.$store.dispatch(setNested(10))
+    await wrapper.vm.$nextTick()
+
     expect(wrapper.vm.foo).toStrictEqual({ bar: 10 })
     expect(wrapper.vm.fooBar).toBe(10)
     expect(wrapper.html()).toBe('<div>10 / 10</div>')
   })
 
-  it('Accepts paths array', () => {
+  it('Accepts paths array', async () => {
     const store = createNestedStore()
     const wrapper = mountWithStore(store, {
       computed: mapState(['foo', 'foo.bar']),
@@ -39,7 +45,10 @@ describe('mapState', () => {
     expect(wrapper.vm.foo).toStrictEqual({ bar: 0 })
     expect(wrapper.vm.bar).toBe(0)
     expect(wrapper.html()).toBe('<div>0 / 0</div>')
+
     wrapper.vm.$store.dispatch(setNested(10))
+    await wrapper.vm.$nextTick()
+
     expect(wrapper.vm.foo).toStrictEqual({ bar: 10 })
     expect(wrapper.vm.bar).toBe(10)
     expect(wrapper.html()).toBe('<div>10 / 10</div>')

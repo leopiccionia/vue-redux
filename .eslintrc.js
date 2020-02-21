@@ -5,7 +5,7 @@ module.exports = {
     node: true
   },
   extends: [
-    '@vue/standard'
+    'standard'
   ],
   parserOptions: {
     parser: 'babel-eslint'

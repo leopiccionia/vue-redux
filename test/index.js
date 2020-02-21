@@ -21,7 +21,7 @@ describe('VueRedux', () => {
     expect(wrapper.html()).toBe('<div>0</div>')
   })
 
-  it('vm.$state is reactive', () => {
+  it('vm.$state is reactive', async () => {
     const store = createCounterStore()
     const wrapper = mountWithStore(store, {
       computed: {
@@ -33,7 +33,10 @@ describe('VueRedux', () => {
     })
     expect(wrapper.vm.$state).toBe(0)
     expect(wrapper.html()).toBe('<div>0 / 0</div>')
+
     wrapper.vm.$store.dispatch(incrementCounter())
+    await wrapper.vm.$nextTick()
+
     expect(wrapper.vm.$state).toBe(1)
     expect(wrapper.html()).toBe('<div>1 / 1</div>')
   })

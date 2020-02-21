@@ -1,7 +1,7 @@
-import { createNestedStore, mountWithStore, setNested } from '../utils'
-import { mapState } from '../../lib'
+import { createNestedStore, mountWithStore, setNested } from './utils'
+import { mapState } from '../lib'
 
-describe('mapState - default build', () => {
+describe('mapState', () => {
   it('Accepts function', () => {
     const store = createNestedStore()
     const wrapper = mountWithStore(store, {

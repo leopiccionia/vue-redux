@@ -1,5 +1,5 @@
-import { createCounterStore, incrementCounter, mountWithStore, setCounter } from '../utils'
-import { mapActions } from '../../lib'
+import { createCounterStore, incrementCounter, mountWithStore, setCounter } from './utils'
+import { mapActions } from '../lib'
 
 describe('mapActions', () => {
   it('Maps to action dispatcher', () => {

@@ -1,6 +1,6 @@
-import { createCounterStore, incrementCounter, mountWithStore } from '../utils'
+import { createCounterStore, incrementCounter, mountWithStore } from './utils'
 
-describe('VueRedux - default build', () => {
+describe('VueRedux', () => {
   it('Exposes vm.$store', () => {
     const store = createCounterStore()
     const wrapper = mountWithStore(store, {

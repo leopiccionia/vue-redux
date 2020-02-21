@@ -10,37 +10,22 @@ const plugins = [
   terser()
 ]
 
-function createBuild ({ input, esmOutput, umdOutput }) {
-  return {
-    input,
-    plugins,
-    output: [
-      {
-        file: umdOutput,
-        format: 'umd',
-        name: 'VueRedux',
-        sourcemap: true,
-        sourcemapExcludeSources: true
-      },
-      {
-        file: esmOutput,
-        format: 'esm',
-        sourcemap: true,
-        sourcemapExcludeSources: true
-      }
-    ]
-  }
+export default {
+  input: 'lib/index.js',
+  plugins,
+  output: [
+    {
+      file: 'dist/index.umd.js',
+      format: 'umd',
+      name: 'VueRedux',
+      sourcemap: true,
+      sourcemapExcludeSources: true
+    },
+    {
+      file: 'dist/index.js',
+      format: 'esm',
+      sourcemap: true,
+      sourcemapExcludeSources: true
+    }
+  ]
 }
-
-export default [
-  createBuild({
-    input: 'lib/index.js',
-    umdOutput: 'dist/index.umd.js',
-    esmOutput: 'dist/index.js'
-  }),
-  createBuild({
-    input: 'lib/compat.js',
-    umdOutput: 'dist/compat.umd.js',
-    esmOutput: 'dist/compat.js'
-  })
-]

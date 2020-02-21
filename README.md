@@ -2,7 +2,7 @@
 
 `vue-redux` is a Redux wrapper for Vue that exposes an API similar to Vuex.
 
-It's a tiny package (~1.5 KB), including some [optional helpers](#helpers).
+It's a tiny package (~1.4 KB), including some [optional helpers](#helpers).
 
 ## When should you use it
 
@@ -53,26 +53,6 @@ Then you'll be able to use the following **read-only** properties inside your co
 Just like in vanilla Redux, you should mutate state only via dispatching actions.
 
 For debugging the current state, use [Redux DevTools](https://github.com/reduxjs/redux-devtools).
-
-#### Compat mode
-
-For enhanced compatibility with Vuex API, use the experimental "compat" build. All named exports have the same alias.
-
-For ES modules:
-
-```diff
-- import { ... } from '@leopiccionia/vue-redux'
-+ import { ... } from '@leopiccionia/vue-redux/dist/compat'
-```
-
-For CommonJS:
-
-```diff
-- const { ... } = require('@leopiccionia/vue-redux')
-+ const { ... } = require('@leopiccionia/vue-redux/dist/compat.umd')
-```
-
-In this mode, the Vue-tracked store Redux is available at `this.$store.state` instead of `this.$state`, just like Vuex.
 
 ### Helpers
 
